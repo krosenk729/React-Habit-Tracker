@@ -61,22 +61,21 @@ class App extends React.Component{
   push copy to state
   */
   changeHabit = (changedHabit) => {
-    console.log(changedHabit);
-    const updatedHabits = {...this.state.habits, ...changedHabit};
-    // updatedHabits[changedHabit] = changedHabit;
+    const updatedHabits = {...this.state.habits};
+    updatedHabits[changedHabit] = changedHabit;
     this.setState({habits: updatedHabits});
   }
 
   removeHabit = (oldHabit) => {
     const updatedHabits = {...this.state.habits};
     updatedHabits[oldHabit] = null; // set to null instead of delete due to firebase
-    this.setState({updatedHabits});
+    this.setState({habits: updatedHabits});
   }
 
   logHistory = (date, habit, didDoIt) => {
     const updatedHistory = {...this.state.history};
     updatedHistory[date][habit] = didDoIt || false;
-    this.setState(updatedHistory);
+    this.setState({history: updatedHistory});
   }
 
   render(){
