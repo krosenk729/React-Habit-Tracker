@@ -60,15 +60,15 @@ class App extends React.Component{
   update copy
   push copy to state
   */
-  changeHabit = (changedHabit) => {
+  changeHabit = (key, newVal) => {
     const updatedHabits = {...this.state.habits};
-    updatedHabits[changedHabit] = changedHabit;
+    updatedHabits[key] = newVal;
     this.setState({habits: updatedHabits});
   }
 
-  removeHabit = (oldHabit) => {
+  removeHabit = (key) => {
     const updatedHabits = {...this.state.habits};
-    updatedHabits[oldHabit] = null; // set to null instead of delete due to firebase
+    updatedHabits[key] = null; // set to null instead of delete due to firebase
     this.setState({habits: updatedHabits});
   }
 
