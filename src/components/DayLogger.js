@@ -61,19 +61,20 @@ class DayLogger extends React.Component{
 
 	renderDateHabits = (indx) => {
 		const dayHistory = this.props.history[this.state.logDate] || {};
+		const habit = this.props.habits[indx];
 
+		console.log(this.state.logDate, habit, dayHistory);
 		return (
 					<li key={indx}>
 					<label>
 					<input 
 					type="checkbox"
-					defaultChecked={dayHistory[this.props.habits[indx]]}
-					name={this.props.habits[indx]}
-					onChange={(event)=> this.props.logHistory(this.state.logDate, this.props.habits[indx], event.target.checked )}
+					checked={dayHistory[habit] === true}
+					name={habit}
+					onChange={(event)=> this.props.logHistory(this.state.logDate, habit, event.target.checked )}
 					/>
 					{this.props.habits[indx]}
 					</label>
-
 					</li>
 			)
 
@@ -91,13 +92,6 @@ class DayLogger extends React.Component{
 				<ul>
 					{Object.keys(this.props.habits).map(this.renderDateHabits)}
 				</ul>
-
-				{/*
-				// show all the habits 
-
-				// if habits[todayhistory ] = true, check it 
-				*/}
-
 			</div>
 		)
 	}
