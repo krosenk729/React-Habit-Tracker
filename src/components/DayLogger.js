@@ -18,12 +18,14 @@ class DayLogger extends React.Component{
 	*/
 
 	prevDate = () => {
-		const newDate = moment.max(this.state.subtract(1, 'days'), this.state.subtract(4, 'days'));
+		const newMoment = moment.min( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(4, 'days'));
+		const newDate = moment(newMoment).format('MM-DD-YYYY');
+		console.log(newDate);
 		this.setState = {logDate: newDate};
 	}
 
 	addDate = () => {
-		const newDate = moment.min(this.state.add(1, 'days'), moment());
+		const newDate = moment.min(moment(this.state.logDate).add(1, 'days'), moment());
 		this.setState = {logDate: newDate};
 	}
 
@@ -40,7 +42,7 @@ class DayLogger extends React.Component{
 		<React.Fragment>
 		<button 
 		className="date-shift date-shift-prev"
-		disabled={moment(this.state.logDate).isSameOrAfter(minDate)}
+		disabled={moment(this.state.logDate, 'MM-DD-YYYY').isSameOrBefore(minDate)}
 		onClick={this.prevDate}
 		>Back</button>
 		<div>{this.state.logDate}</div>
