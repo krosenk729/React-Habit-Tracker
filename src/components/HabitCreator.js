@@ -9,7 +9,8 @@ class HabitCreator extends React.Component{
 	};
 
 	/**********************************************************
-	Add a Habit
+	Handle Add / Change Habits 
+	(bug with react event.Current vs event.target -- clean up the terciary once resolved)
 	*/
 	newHabitRef = React.createRef();
 	handleNewHabit = (event) => {

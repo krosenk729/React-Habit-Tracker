@@ -3,7 +3,7 @@ import moment from 'moment';
 
 class DayLogger extends React.Component{
 	state = {
-		logDate: moment()
+		logDate: moment().format()
 	}
 
 	/**********************************************************
@@ -22,7 +22,7 @@ class DayLogger extends React.Component{
 
 
 	/**********************************************************
-	Show Buttons to Log 3 Days Back to Today
+	Render Buttons to Log 3 Days Back to Today
 	*/
 
 	renderDateSwitcher = () => {
@@ -45,6 +45,26 @@ class DayLogger extends React.Component{
 	// 	)
 	}
 
+
+	/**********************************************************
+	Render List Items
+	*/
+
+	// renderCheckBox = (habitName, historicalData) => {
+	// 	return (
+	// 				<li key={indx}>
+	// 				<label>{this.props.habits[indx]}
+	// 				<input 
+	// 				type="checkbox" 
+	// 				name={this.props.habits[indx]} 
+	// 				value={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
+	// 				onChange={()=> this.props.logHistory(this.state.logDate, this.props.habits[indx], true)} 
+	// 				/>
+	// 				</label>
+	// 				</li>
+	// 				)
+	// }
+
 	/**********************************************************
 	Render
 	*/
@@ -53,18 +73,21 @@ class DayLogger extends React.Component{
 		return (
 			<div>
 				{ /* this.renderDateSwitcher() */}
-
-				{ Object.keys(this.props.habits).map( habit => (
-					<label>{habit}
+				<ul>
+				{ Object.keys(this.props.habits).map( indx => (
+					<li key={indx}>
+					<label>{this.props.habits[indx]}
 					<input 
 					type="checkbox" 
-					name={habit} 
-					value={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][habit] === true}
-					onChange={(e)=>this.props.logHistory(this.state.logDate, habit, true)} 
+					name={this.props.habits[indx]} 
+					value={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
+					onChange={()=> this.props.logHistory(this.state.logDate, this.props.habits[indx], true)} 
 					/>
 					</label>
+					</li>
 					)) 
 				}
+				</ul>
 			</div>
 		)
 	}

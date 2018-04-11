@@ -74,6 +74,7 @@ class App extends React.Component{
 
   logHistory = (date, habit, didDoIt) => {
     const updatedHistory = {...this.state.history};
+    updatedHistory[date] = updatedHistory[date] || {};
     updatedHistory[date][habit] = didDoIt || false;
     this.setState({history: updatedHistory});
   }
@@ -84,7 +85,7 @@ class App extends React.Component{
         <DayLogger
         habits={this.state.habits}
         history={this.state.history} 
-        logHistory={this.state.logHistory} 
+        logHistory={this.logHistory} 
         />
         
         <HistoryTracker 
