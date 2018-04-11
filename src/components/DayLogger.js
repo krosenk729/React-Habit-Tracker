@@ -54,12 +54,6 @@ class DayLogger extends React.Component{
 		)
 	}
 
-		// <div>{(this.state.logDate).format('MM-DD-YYYY')}</div>
-
-		// <button 
-		// className="date-shift date-shift-add" 
-		// { moment(this.state.logDate).isSameOrAfter(maxDate) ? "disabled" : (onClick={this.addDate}) }
-		// >Back</button>
 	/**********************************************************
 	Render
 	*/
