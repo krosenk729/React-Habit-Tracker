@@ -36,31 +36,24 @@ class DayLogger extends React.Component{
 		const minDate = moment().subtract(4, 'days');
 		const maxDate = moment();
 
-	// return (
-	// 	<button 
-	// 	className="date-shift date-shift-prev" 
-	// 	{ moment(this.state.logDate).isSameOrBefore(minDate) ? "disabled" : (onClick={this.prevDate}) }
-	// 	>Back</button>
-
-	// 	<div>{(this.state.logDate).format('MM-DD-YYYY')}</div>
-
-	// 	<button 
-	// 	className="date-shift date-shift-add" 
-	// 	{ moment(this.state.logDate).isSameOrAfter(maxDate) ? "disabled" : (onClick={this.addDate}) }
-	// 	>Back</button>
-
-	// 	)
+	return (
+		<React.Fragment>
+		<button 
+		className="date-shift date-shift-prev"
+		disabled={moment(this.state.logDate).isSameOrAfter(minDate)}
+		onClick={this.prevDate}
+		>Back</button>
+		<div>{this.state.logDate}</div>
+		</React.Fragment>
+		)
 	}
 
+		// <div>{(this.state.logDate).format('MM-DD-YYYY')}</div>
 
-	/**********************************************************
-	Render List Items
-	*/
-
-	renderCheckBox = (habitName, historicalData) => {
-		const habitHistory = this.props.history[this.state.logDate] ? this.props.history[this.state.logDate][habitName] : {};
-	}
-
+		// <button 
+		// className="date-shift date-shift-add" 
+		// { moment(this.state.logDate).isSameOrAfter(maxDate) ? "disabled" : (onClick={this.addDate}) }
+		// >Back</button>
 	/**********************************************************
 	Render
 	*/
@@ -69,7 +62,7 @@ class DayLogger extends React.Component{
 		const dayHistory = this.props.history[this.state.logDate] || {};
 		return (
 			<div>
-				{ /* this.renderDateSwitcher() */}
+				{ this.renderDateSwitcher() }
 				<ul>
 					{Object.keys(this.props.habits).map( indx => (
 					<li key={indx}>
