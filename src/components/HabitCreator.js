@@ -14,9 +14,9 @@ class HabitCreator extends React.Component{
 	newHabitRef = React.createRef();
 	handleNewHabit = (event) => {
 		event.preventDefault();
-		const habit = this.newHabitRef.current ? this.newHabitRef.current.value : event.target.newHabit.value;
-		
-		this.props.changeHabit(habit);
+		const newHabit = this.newHabitRef.current ? this.newHabitRef.current.value : event.target.newHabit.value;
+		const newKey = +new Date() + '' + +new Date();
+		this.props.changeHabit(newKey, newHabit);
 		event.target.reset();
 	}
 
@@ -34,8 +34,8 @@ class HabitCreator extends React.Component{
 			<div>
 			<h2>Your Tracked Habits</h2>
 			<ul>
-			{Object.keys(this.props.habits).map(habit => (
-				<li>
+			{Object.keys(this.props.habits).map(indx => (
+				<li key={indx}>
 				<fieldset>
 				<input onChange={this.handleChangeHabit} value={habit} />
 				<button onClick={()=> this.props.removeHabit(habit)}> X </button>
