@@ -94,8 +94,8 @@ class App extends React.Component{
 
         <HabitCreator
         habits={this.state.habits}
-        changeHabit = {this.state.changeHabit}
-        removeHabit = {this.state.removeHabit}
+        changeHabit = {this.changeHabit}
+        removeHabit = {this.removeHabit}
         />
 
       </React.Fragment>

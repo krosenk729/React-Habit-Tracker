@@ -19,7 +19,6 @@ class HabitCreator extends React.Component{
 		
 		this.props.changeHabit({[habit]: habit});
 
-		this.refs.newHabit = '';
 		event.target.reset();
 	}
 
