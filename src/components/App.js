@@ -86,11 +86,15 @@ class App extends React.Component{
         history={this.state.history} 
         logHistory={this.state.logHistory} 
         />
-        <HistoryTracker history={this.state.history} />
+        
+        <HistoryTracker 
+        habits={this.state.habits}
+        history={this.state.history}
+         />
 
         <HabitCreator
         habits={this.state.habits}
-        changedHabit = {this.state.changedHabit}
+        changeHabit = {this.state.changeHabit}
         removeHabit = {this.state.removeHabit}
         />
 

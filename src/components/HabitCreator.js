@@ -1,14 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 
 class HabitCreator extends React.Component{
-	newHabit = React.createRef();
+	static propTypes = {
+		habits: PropTypes.object,
+		changeHabit: PropTypes.func.isRequired,
+		removeHabit: PropTypes.func.isRequired
+	};
+
 
 	/**********************************************************
 	Add a Habit
 	*/
-	handleNewHabit(){
-		this.props.changedHabit();
+	newHabitRef = React.createRef();
+	handleNewHabit = (event) =>{
+		event.preventDefault();
+		const habit = this.newHabitRef.current ? this.newHabitRef.current.value : event.target.newHabit.value;
+		
+		this.props.changeHabit({[habit]: habit});
+
 		this.refs.newHabit = '';
+		event.target.reset();
 	}
 
 	render(){
@@ -17,19 +29,19 @@ class HabitCreator extends React.Component{
 			<h2>Your Tracked Habits</h2>
 			<ul>
 			{Object.keys(this.props.habits).map(habit => (
-				<li>
+				<li key={habit}>
 				<fieldset>
-				<input key={habit} onChange={()=> this.props.changedHabit} value={habit} />
+				<input onChange={()=> this.props.changeHabit} value={habit} />
 				<button onClick={()=> this.props.removeHabit()}> X </button>
 				</fieldset>
 				</li>
 				))}
 
 				<li>
-				<fieldset>
-				<input onChange={()=> this.props.changedHabit()} />
-				<button onClick={()=> this.props.removeHabit()}> X </button>
-				</fieldset>
+				<form onSubmit={this.handleNewHabit}>
+				<input name="newHabit" ref={this.newHabitRef} />
+				<button type="submit"> + </button>
+				</form>
 				</li>
 			</ul>
 			</div>

@@ -9,14 +9,18 @@ class HistoryTracker extends React.Component{
 	renderBox(date, countHabits){
 		const historyData = this.props.history[date];
 		const numComplete = historyData ? Object.keys(historyData).filter(i => historyData[i]).length : 0;
-		const colorPercent = Math.floor(numComplete / countHabits) ;
+		
+		const classNames = {};
+		classNames['history-box'] = true ;
+		classNames['color-1'] = false && Math.floor(numComplete / countHabits) ;
 
 		return (
-			<div className='col-{colorPercent}'></div>
+			<div key={date} className={classNames}>{date} | hist data: {historyData} | countHabits: {countHabits}}</div>
 			)
 	}
 	render(){
-		const dateRange = new Array(30).fill(moment().subtract(30, 'days')).map((i, indx) => i.add(indx, 'days'));
+
+		const dateRange = new Array(30).fill(moment().subtract(30, 'days')).map((i, indx) => i.add(1, 'days').format('MM-DD-YYYY'));
 		const countHabits = this.props.habits ? Object.keys(this.props.habits).length : 0;
 		return (
 			<div className="history">
