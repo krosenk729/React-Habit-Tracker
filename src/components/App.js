@@ -61,9 +61,10 @@ class App extends React.Component{
   push copy to state
   */
   changeHabit = (changedHabit) => {
-    const updatedHabits = {...this.state.habits};
-    updatedHabits[changedHabit] = changedHabit;
-    this.setState({updatedHabits});
+    console.log(changedHabit);
+    const updatedHabits = {...this.state.habits, ...changedHabit};
+    // updatedHabits[changedHabit] = changedHabit;
+    this.setState({habits: updatedHabits});
   }
 
   removeHabit = (oldHabit) => {
