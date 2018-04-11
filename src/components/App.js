@@ -73,7 +73,6 @@ class App extends React.Component{
   }
 
   logHistory = (date, habit, didDoIt) => {
-    console.log('loc history', date, habit, didDoIt);
     const updatedHistory = {...this.state.history};
     updatedHistory[date] = updatedHistory[date] || {};
     updatedHistory[date][habit] = didDoIt || false;

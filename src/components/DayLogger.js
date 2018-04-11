@@ -67,9 +67,6 @@ class DayLogger extends React.Component{
 
 	render(){
 		const dayHistory = this.props.history[this.state.logDate] || {};
-		console.log(dayHistory);
-		console.log(this.props.history);
-
 		return (
 			<div>
 				{ /* this.renderDateSwitcher() */}
