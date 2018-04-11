@@ -16,12 +16,10 @@ class DayLogger extends React.Component{
 	/**********************************************************
 	Update Which Date is Being Logged
 	*/
-
 	prevDate = () => {
-		const newMoment = moment.min( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(4, 'days'));
-		const newDate = moment(newMoment).format('MM-DD-YYYY');
+		const newDate = moment.max( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(4, 'days')).format('MM-DD-YYYY');
 		console.log(newDate);
-		this.setState = {logDate: newDate};
+		this.setState({logDate: newDate});
 	}
 
 	addDate = () => {
