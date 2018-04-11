@@ -54,17 +54,15 @@ class DayLogger extends React.Component{
 		)
 	}
 
+
 	/**********************************************************
-	Render
+	Render List of Habits for a Day
 	*/
 
-	render(){
+	renderDateHabits = (indx) => {
 		const dayHistory = this.props.history[this.state.logDate] || {};
+
 		return (
-			<div>
-				{ this.renderDateSwitcher() }
-				<ul>
-					{Object.keys(this.props.habits).map( indx => (
 					<li key={indx}>
 					<label>
 					<input 
@@ -77,7 +75,21 @@ class DayLogger extends React.Component{
 					</label>
 
 					</li>
-						))}
+			)
+
+	}
+
+	/**********************************************************
+	Render
+	*/
+
+	render(){
+		const dayHistory = this.props.history[this.state.logDate] || {};
+		return (
+			<div>
+				{ this.renderDateSwitcher() }
+				<ul>
+					{Object.keys(this.props.habits).map(this.renderDateHabits)}
 				</ul>
 
 				{/*
