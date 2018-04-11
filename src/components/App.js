@@ -40,7 +40,6 @@ class App extends React.Component{
     } else {
       this.props.history.push('/');
     }
-
   }
 
   componentWillUnmount(){
@@ -72,10 +71,10 @@ class App extends React.Component{
     this.setState({habits: updatedHabits});
   }
 
-  logHistory = (date, habit, didDoIt) => {
+  logHistory = (date, habitKey, didDoIt) => {
     const updatedHistory = {...this.state.history};
     updatedHistory[date] = updatedHistory[date] || {};
-    updatedHistory[date][habit] = didDoIt || false;
+    updatedHistory[date][habitKey] = didDoIt || false;
     this.setState({history: updatedHistory});
   }
 

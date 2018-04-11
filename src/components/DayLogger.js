@@ -17,7 +17,7 @@ class DayLogger extends React.Component{
 	Update Which Date is Being Logged
 	*/
 	prevDate = () => {
-		const newDate = moment.max( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(4, 'days')).format('MM-DD-YYYY');
+		const newDate = moment.max( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(3, 'days')).format('MM-DD-YYYY');
 		console.log(newDate);
 		this.setState({logDate: newDate});
 	}
@@ -34,7 +34,7 @@ class DayLogger extends React.Component{
 	*/
 
 	renderDateSwitcher = () => {
-		const minDate = moment().subtract(4, 'days');
+		const minDate = moment().subtract(3, 'days');
 		const maxDate = moment();
 
 	return (
@@ -69,11 +69,11 @@ class DayLogger extends React.Component{
 					<label>
 					<input 
 					type="checkbox"
-					checked={dayHistory[habit] === true}
+					checked={dayHistory[indx] === true}
 					name={habit}
-					onChange={(event)=> this.props.logHistory(this.state.logDate, habit, event.target.checked )}
+					onChange={(event)=> this.props.logHistory(this.state.logDate, indx, event.target.checked )}
 					/>
-					{this.props.habits[indx]}
+					{habit}
 					</label>
 					</li>
 			)
