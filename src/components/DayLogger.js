@@ -1,9 +1,16 @@
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types'; 
 
 class DayLogger extends React.Component{
+	static propTypes = {
+		habits: PropTypes.object,
+		history: PropTypes.object,
+		logHistory: PropTypes.func.isRequired
+	};
+
 	state = {
-		logDate: moment().format()
+		logDate: moment().format('MM-DD-YYYY')
 	}
 
 	/**********************************************************
@@ -50,45 +57,45 @@ class DayLogger extends React.Component{
 	Render List Items
 	*/
 
-	// renderCheckBox = (habitName, historicalData) => {
-	// 	return (
-	// 				<li key={indx}>
-	// 				<label>{this.props.habits[indx]}
-	// 				<input 
-	// 				type="checkbox" 
-	// 				name={this.props.habits[indx]} 
-	// 				value={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
-	// 				onChange={()=> this.props.logHistory(this.state.logDate, this.props.habits[indx], true)} 
-	// 				/>
-	// 				</label>
-	// 				</li>
-	// 				)
-	// }
+	renderCheckBox = (habitName, historicalData) => {
+		const habitHistory = this.props.history[this.state.logDate] ? this.props.history[this.state.logDate][habitName] : {};
+	}
 
 	/**********************************************************
 	Render
 	*/
 
 	render(){
+		const dayHistory = this.props.history[this.state.logDate] || {};
+		console.log(dayHistory);
+		console.log(this.props.history);
+
 		return (
 			<div>
 				{ /* this.renderDateSwitcher() */}
 				<ul>
-				{ Object.keys(this.props.habits).map( indx => (
+					{Object.keys(this.props.habits).map( indx => (
 					<li key={indx}>
 					<label>
 					<input 
-					type="checkbox" 
-					name={this.props.habits[indx]} 
-					checked={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
-					onChange={(event)=> this.props.logHistory(this.state.logDate, this.props.habits[indx], event.target.checked)} 
+					type="checkbox"
+					defaultChecked={dayHistory[this.props.habits[indx]]}
+					name={this.props.habits[indx]}
+					onChange={(event)=> this.props.logHistory(this.state.logDate, this.props.habits[indx], event.target.checked )}
 					/>
 					{this.props.habits[indx]}
 					</label>
+
 					</li>
-					)) 
-				}
+						))}
 				</ul>
+
+				{/*
+				// show all the habits 
+
+				// if habits[todayhistory ] = true, check it 
+				*/}
+
 			</div>
 		)
 	}
