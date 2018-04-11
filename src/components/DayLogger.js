@@ -76,13 +76,14 @@ class DayLogger extends React.Component{
 				<ul>
 				{ Object.keys(this.props.habits).map( indx => (
 					<li key={indx}>
-					<label>{this.props.habits[indx]}
+					<label>
 					<input 
 					type="checkbox" 
 					name={this.props.habits[indx]} 
-					value={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
-					onChange={()=> this.props.logHistory(this.state.logDate, this.props.habits[indx], true)} 
+					checked={this.props.history[this.state.logDate] && this.props.history[this.state.logDate][this.props.habits[indx]] === true}
+					onChange={(event)=> this.props.logHistory(this.state.logDate, this.props.habits[indx], event.target.checked)} 
 					/>
+					{this.props.habits[indx]}
 					</label>
 					</li>
 					)) 
