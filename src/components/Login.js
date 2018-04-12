@@ -5,9 +5,9 @@ import { firebaseApp } from '../utils/base';
 class Login extends React.Component{
 
   componentDidMount(){
-  	firebase.auth().onAuthStateChanged( userData => {
+  	this.authListener = firebase.auth().onAuthStateChanged( userData => {
   		console.log('componentDidMount user data', userData);
-  		if(userData.uid){
+  		if(userData && userData.uid){
   			localStorage.setItem('user', userData.uid);
   			this.props.history.push('/habits');
   		} else {
@@ -15,6 +15,10 @@ class Login extends React.Component{
   			localStorage.removeItem('user'); // just in case
   		}
   	});
+  }
+
+  componentWillUnmount(){
+  	if(this.authListener) this.authListener = undefined;
   }
 
 	/**********************************************************

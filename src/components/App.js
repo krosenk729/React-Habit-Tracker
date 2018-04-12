@@ -23,15 +23,16 @@ class App extends React.Component{
 
   /**********************************************************
   Save / sync with firebase
+  Log user in and out with firebase
   */
   componentDidMount(){
     // const user = localStorage.getItem('user');
     firebase.auth().onAuthStateChanged( userData => {
-      if(userData.uid){
+      if(userData && userData.uid){
         this.userAuth(userData);
       } else {
         localStorage.removeItem('user');
-        this.props.history.push('/');
+        this.props.history.push('/login');
       }
     });
   }
@@ -62,12 +63,8 @@ class App extends React.Component{
   Store user in session storage
   */
 
-  logOut = async () => {
-    await firebase.auth().signout();
-
-    // localStorage.clear();
-    localStorage.removeItem('user');
-    this.props.history.push('/login');
+  logOut = () => {
+    firebase.auth().signOut();
   }
 
   /**********************************************************
