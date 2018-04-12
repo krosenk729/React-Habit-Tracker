@@ -105,12 +105,12 @@ class App extends React.Component{
         logHistory={this.logHistory} 
         />
         
-        {/* 
+        
         <HistoryTracker 
         habits={this.state.habits}
         history={this.state.history}
          />
-         */}
+
         <HabitCreator
         habits={this.state.habits}
         changeHabit = {this.changeHabit}

@@ -7,6 +7,11 @@ class HistoryTracker extends React.Component{
 	Convert List of Days to Colors 
 	*/
 	renderBox(date, countHabits){
+
+		return (
+			<div key={date}>{date}</div>
+			)
+
 		const historyData = this.props.history[date];
 		const numComplete = historyData ? Object.keys(historyData).filter(i => historyData[i]).length : 0;
 		
@@ -18,9 +23,15 @@ class HistoryTracker extends React.Component{
 			<div key={date} className={classNames}>{date} | hist data: {historyData} | countHabits: {countHabits}}</div>
 			)
 	}
-	render(){
 
-		const dateRange = new Array(30).fill(moment().subtract(30, 'days')).map((i, indx) => i.add(1, 'days').format('MM-DD-YYYY'));
+	/**********************************************************
+	Convert List of Days to Colors 
+	*/
+	render(){
+		const dateRange = new Array(30)
+			.fill(moment().subtract(30, 'days'))
+			.map((i, indx) => i.add(1, 'days')
+			.format('MM-DD-YYYY'));
 		const countHabits = this.props.habits ? Object.keys(this.props.habits).length : 0;
 		return (
 			<div className="history">
