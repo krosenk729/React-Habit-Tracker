@@ -6,12 +6,10 @@ class Login extends React.Component{
 
   componentDidMount(){
   	this.authListener = firebase.auth().onAuthStateChanged( userData => {
-  		console.log('componentDidMount user data', userData);
   		if(userData && userData.uid){
   			localStorage.setItem('user', userData.uid);
   			this.props.history.push('/habits');
   		} else {
-  			console.log('else ran');
   			localStorage.removeItem('user'); // just in case
   		}
   	});

@@ -18,13 +18,11 @@ class DayLogger extends React.Component{
 	*/
 	prevDate = () => {
 		const newDate = moment.max( moment(this.state.logDate, 'MM-DD-YYYY').subtract(1, 'days'), moment(this.state.logDate, 'MM-DD-YYYY').subtract(3, 'days')).format('MM-DD-YYYY');
-		console.log(newDate);
 		this.setState({logDate: newDate});
 	}
 
 	nextDate = () => {
 		const newDate = moment.min( moment(this.state.logDate, 'MM-DD-YYYY').add(1, 'days'), moment()).format('MM-DD-YYYY');
-		console.log(newDate);
 		this.setState({logDate: newDate});
 	}
 
@@ -63,7 +61,6 @@ class DayLogger extends React.Component{
 		const dayHistory = this.props.history[this.state.logDate] || {};
 		const habit = this.props.habits[indx];
 
-		console.log(this.state.logDate, habit, dayHistory);
 		return (
 					<li key={indx}>
 					<label>
