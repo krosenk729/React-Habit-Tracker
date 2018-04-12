@@ -27,7 +27,7 @@ class App extends React.Component{
   */
   componentDidMount(){
     // const user = localStorage.getItem('user');
-    firebase.auth().onAuthStateChanged( userData => {
+    this.authListener = firebase.auth().onAuthStateChanged( userData => {
       if(userData && userData.uid){
         this.userAuth(userData);
       } else {
@@ -55,6 +55,7 @@ class App extends React.Component{
   }
 
   componentWillUnmount(){
+    if(this.authListener){ this.authListener = undefined }
     if(this.habitRef){ base.removeBinding(this.habitRef) }
     if(this.histRef){ base.removeBinding(this.histRef) }
   }
