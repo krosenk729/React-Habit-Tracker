@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from 'firebase';
 import base from '../utils/base';
 import DayLogger from './DayLogger';
 import HabitCreator from './HabitCreator';
@@ -14,7 +15,8 @@ class App extends React.Component{
   }
   */
   state = { 
-    user: 'user123',
+    user: '',
+    displayName: '',
     habits: {},
     history: {}
   };
@@ -23,35 +25,50 @@ class App extends React.Component{
   Save / sync with firebase
   */
   componentDidMount(){
-    const user = 'user123'; //localStorage.getItem(user);
-    if(user){
-      this.setState({user});
+    // const user = localStorage.getItem('user');
+    firebase.auth().onAuthStateChanged( userData => {
+      if(userData.uid){
+        this.userAuth(userData);
+      } else {
+        localStorage.removeItem('user');
+        this.props.history.push('/');
+      }
+    });
+  }
 
-      this.dbRef = base.syncState(`${this.state.user}/habits`, {
-        context: this,
-        state: 'habits'
-      });
+  userAuth = async userData => {
+    const user = userData.uid;
+    const displayName = userData.displayName;
+    localStorage.setItem('user', user);
+    this.setState({user, displayName});
 
-      this.dbRef = base.syncState(`${this.state.user}/history`, {
-        context: this,
-        state: 'history'
-      }); 
+    this.habitRef = base.syncState(`${this.state.user}/habits`, {
+      context: this,
+      state: 'habits'
+    });
 
-    } else {
-      this.props.history.push('/');
-    }
+    this.histRef = base.syncState(`${this.state.user}/history`, {
+      context: this,
+      state: 'history'
+    }); 
   }
 
   componentWillUnmount(){
-    if(this.dbRef){ base.removeBinding(this.dbRef) }
+    if(this.habitRef){ base.removeBinding(this.habitRef) }
+    if(this.histRef){ base.removeBinding(this.histRef) }
   }
 
   /**********************************************************
   Store user in session storage
   */
-  // componentDidUpdate(){
-  //   localStorage.setItem('user', 'user123'/*base.getUser()*/ );
-  // }
+
+  logOut = async () => {
+    await firebase.auth().signout();
+
+    // localStorage.clear();
+    localStorage.removeItem('user');
+    this.props.history.push('/login');
+  }
 
   /**********************************************************
   Updating Items:
@@ -81,6 +98,9 @@ class App extends React.Component{
   render(){
     return (
       <React.Fragment>
+      <nav className='nav'>
+        <button onClick={this.logOut}>Log Out {this.state.displayName}</button>
+      </nav>
         <DayLogger
         habits={this.state.habits}
         history={this.state.history} 

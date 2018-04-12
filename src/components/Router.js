@@ -8,7 +8,7 @@ const Router = () => (
 		<Switch>
 			<Route exact path="/habits" component={App} />
 			<Route path="/login" component={Login} />
-			// <Redirect from='*' to='/login' />
+			<Redirect from='*' to='/login' />
 		</Switch>
 	</BrowserRouter>
 );
