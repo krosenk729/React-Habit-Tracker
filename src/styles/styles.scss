@@ -1,0 +1,18 @@
+.history-grid{
+	& > div{
+		width: 25px;
+		height: 25px;
+		border: 5px solid grey;
+		display: inline-block;
+	}
+
+	.c-0{
+		background: darken(pink, 5%)
+	}
+	.c-5{
+		background: darken(pink, 15%)
+	}
+	.c-10{
+		background: darken(pink, 25%)
+	}
+}

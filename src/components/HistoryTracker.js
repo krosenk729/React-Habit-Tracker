@@ -12,7 +12,7 @@ class HistoryTracker extends React.Component{
 		for(let habit in historyData){
 			if(historyData[habit]) numComplete++;
 		}
-		let classComplete = 'c-' + numComplete/countHabits;
+		let classComplete = 'c-' + Math.floor(numComplete/countHabits * 10);
 		return (
 			<div key={date} className={classComplete} data-date={date}></div>
 			)

@@ -1,0 +1,13 @@
+.history-grid > div {
+  width: 25px;
+  height: 25px;
+  border: 5px solid grey;
+  display: inline-block; }
+.history-grid .c-0 {
+  background: #ffa7b6; }
+.history-grid .c-5 {
+  background: #ff748c; }
+.history-grid .c-10 {
+  background: #ff4162; }
+
+/*# sourceMappingURL=styles.css.map */
