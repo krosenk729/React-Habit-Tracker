@@ -7,20 +7,14 @@ class HistoryTracker extends React.Component{
 	Convert List of Days to Colors 
 	*/
 	renderBox(date, countHabits){
-
+		const historyData = this.props.history[date] || {};
+		let numComplete = 0;
+		for(let habit in historyData){
+			if(historyData[habit]) numComplete++;
+		}
+		let classComplete = 'c-' + numComplete/countHabits;
 		return (
-			<div key={date}>{date}</div>
-			)
-
-		const historyData = this.props.history[date];
-		const numComplete = historyData ? Object.keys(historyData).filter(i => historyData[i]).length : 0;
-		
-		const classNames = {};
-		classNames['history-box'] = true ;
-		classNames['color-1'] = false && Math.floor(numComplete / countHabits) ;
-
-		return (
-			<div key={date} className={classNames}>{date} | hist data: {historyData} | countHabits: {countHabits}}</div>
+			<div key={date} className={classComplete} data-date={date}></div>
 			)
 	}
 
