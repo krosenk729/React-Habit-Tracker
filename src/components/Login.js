@@ -6,14 +6,14 @@ class Login extends React.Component{
 	/**********************************************************
 	Login with firebase
 	*/
-	login(){
+	login = () =>{
 		localStorage.setItem('user', 'user123'/*base.getUser()*/ );
 		this.props.history.push('/habits');
 	}
 
 	render(){
 		return (
-			<button onClick={this.login()}>Log In</button>
+			<button onClick={this.login}>Log In</button>
 		)
 	}
 }

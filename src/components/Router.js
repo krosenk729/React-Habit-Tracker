@@ -6,9 +6,9 @@ import App from './App';
 const Router = () => (
 	<BrowserRouter>
 		<Switch>
-			<Route exact path="/" component={Login} />
 			<Route exact path="/habits" component={App} />
-			<Redirect from='*' to='/' />
+			<Route path="/login" component={Login} />
+			// <Redirect from='*' to='/login' />
 		</Switch>
 	</BrowserRouter>
 );
