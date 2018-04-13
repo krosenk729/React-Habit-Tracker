@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import {floorEr} from '../utils/helpers';
+import {floorEr, rangeTen} from '../utils/helpers';
 
 class HistoryTracker extends React.Component{
 	state = {
@@ -23,9 +23,16 @@ class HistoryTracker extends React.Component{
 			)
 	}
 
-	renderBoxLegend = (color) => (
-		<h1>Hi</h1>
-	)
+	renderBoxLegend = (color) => {
+		let r = rangeTen();
+		// let classComplete = `c-${this.state.color}-` + floorEr(numComplete/(Math.max(countHabits), 1) * 10);
+		
+		return (
+			<div>
+			{ r.map(i => <div className={i}>{i}</div>) }
+			</div>
+		)
+	}
 
 	/**********************************************************
 	Switch Color Palettes 
