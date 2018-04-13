@@ -15,7 +15,7 @@
 .display {
   font-size: 4em; }
 
-.flexer, #root, .card {
+.flexer, #root, .card, .logger-nav {
   display: flex; }
 
 .justspacebetween {
@@ -24,10 +24,10 @@
 .justspacearound {
   justify-content: space-around; }
 
-.justcenter {
+.justcenter, .logger-nav {
   justify-content: center; }
 
-.itemcenter, .card {
+.itemcenter, .card, .logger-nav {
   align-items: center; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,15 +84,22 @@ h5, h6, p {
 .card {
   background: #FFFFFF;
   margin-bottom: 1em;
+  padding-bottom: 1em;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   flex-direction: column;
-  min-height: 40vh; }
+  min-height: 45vh; }
 
 nav, .nav {
   width: 100%;
   background: #BDBDBD;
   align-items: center; }
+
+button.date-shift {
+  margin: 1em;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%; }
 
 .history div.c-blue-0 {
   background: #04befe;
@@ -345,5 +352,7 @@ nav, .nav {
   margin-bottom: 2em; }
   .history-grid-wrapper .history-grid {
     width: 300px; }
+  .history-grid-wrapper .history-legend > div {
+    margin-bottom: 1em; }
 
 /*# sourceMappingURL=styles.css.map */

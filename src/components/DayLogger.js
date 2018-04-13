@@ -38,16 +38,16 @@ class DayLogger extends React.Component{
 	return (
 		<React.Fragment>
 		<button 
-		className="date-shift date-shift-prev"
+		className="date-shift"
 		disabled={moment(this.state.logDate, 'MM-DD-YYYY').isSameOrBefore(minDate, 'day')}
 		onClick={this.prevDate}
-		>Back</button>
-		<div>{this.state.logDate}</div>
+		>◀</button>
+		<h4>{this.state.logDate}</h4>
 		<button 
-		className="date-shift date-shift-next"
+		className="date-shift"
 		disabled={moment(this.state.logDate, 'MM-DD-YYYY').isSameOrAfter(maxDate, 'day')}
 		onClick={this.nextDate}
-		>Forward</button>
+		>▶</button>
 		</React.Fragment>
 		)
 	}
@@ -86,9 +86,9 @@ class DayLogger extends React.Component{
 		<section className="container logger card">
 			<h2>Did You Do It?</h2>
 			<p className="lead">Track if you did your habit</p>
-			<header className="flexer">
+			<div className="logger-nav">
 			{ this.renderDateSwitcher() }
-			</header>
+			</div>
 			<ul>
 				{Object.keys(this.props.habits).map(this.renderDateHabits)}
 			</ul>

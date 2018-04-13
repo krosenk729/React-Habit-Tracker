@@ -16,8 +16,7 @@ class HistoryTracker extends React.Component{
 		for(let habit in historyData){
 			if(historyData[habit]) numComplete++;
 		}
-
-		let classComplete = `c-chip c-${this.state.color}-` + floorEr(numComplete/(Math.max(countHabits), 1) * 10);
+		let classComplete = `c-chip c-${this.state.color}-` + floorEr(numComplete/ countHabits * 10);
 		return (
 			<div key={date} className={classComplete} data-date={date}></div>
 			)
@@ -58,7 +57,7 @@ class HistoryTracker extends React.Component{
 			.fill(moment().subtract(30, 'days'))
 			.map((i, indx) => i.add(1, 'days')
 			.format('MM-DD-YYYY'));
-		const countHabits = this.props.habits ? Object.keys(this.props.habits).length : 0;
+		const countHabits = this.props.habits ? Object.keys(this.props.habits).length : 1;
 		return (
 			<section className='container history card'>
 			<h2>How Has Your Tracking Been?</h2>
@@ -71,7 +70,9 @@ class HistoryTracker extends React.Component{
 				<h4>Legend</h4>
 				{this.renderBoxLegend()}
 				<h4>Choose a Color</h4>
+				<div>
 				{this.state.colorList.map(this.renderColorSwitch)}
+				</div>
 			</div>
 			</div>
 			</section>

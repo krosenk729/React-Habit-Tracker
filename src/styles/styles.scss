@@ -127,13 +127,15 @@ h5, h6, p { font-size: 1rem }
 .card{
 	background: $c-white-pure;
 	margin-bottom: 1em;
+	padding-bottom: 1em;
 	@include boxshadow;
 
 	@extend .flexer;
 	@extend .itemcenter;
 	flex-direction: column;
 
-	min-height: 40vh;
+	min-height: 45vh;
+
 }
 
 // ==================================================
@@ -147,6 +149,21 @@ nav, .nav{
 
 // ==================================================
 // Section: Day Log
+
+.logger-nav{
+	@extend .flexer;
+	@extend .justcenter;
+	@extend .itemcenter;
+
+
+}
+
+button.date-shift{
+	margin: 1em;
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
 
 // ==================================================
 // Section: History
@@ -203,6 +220,10 @@ nav, .nav{
 
 	.history-grid{
 		width: 300px;
+	}
+
+	.history-legend > div{
+		margin-bottom: 1em;
 	}
 }
 
