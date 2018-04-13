@@ -1,8 +1,10 @@
 $c-grey-l: #BDBDBD;
 $c-grey-m: #9E9E9E;
 $c-grey-d: #616161;
-$c-black: #212121;
-$c-white: #F5F5F5;
+$c-black-not: #212121;
+$c-black-pure: #000000;
+$c-white-not: #F5F5F5;
+$c-white-pure: #FFFFFF;
 $c-blue: #6f86d6;
 $c-pink: #c471f5;
 $c-orange: #fda085;
@@ -10,6 +12,27 @@ $c-aqua: #84fab0;
 
 // ==================================================
 // Utilities 
+
+@mixin boxshadow($horiz: 5px, $vert: 5px, $blur: 5px, $col: rgba(0, 0, 0, 0.1)){
+	-webkit-box-shadow: $horiz $vert $blur $col;
+	box-shadow: $horiz $vert $blur $col;
+}
+
+@mixin transition($which: all, $time: 1s, $how: ease-in-out){
+	-webkit-transition: $which $time $how;
+	-moz-transition: $which $time $how;
+	-ms-transition: $which $time $how;
+	-o-transition: $which $time $how;
+	transition: $which $time $how;
+}
+
+@mixin gradient-bg($left, $right: darken($left, 25%)){
+	background: $left; // backup
+	background: -webkit-linear-gradient($left, $right);
+	background: -o-linear-gradient($left, $right);
+	background: -moz-linear-gradient($left, $right);
+	background: linear-gradient($left, $right);
+}
 
 .full{
     position: absolute;
@@ -31,6 +54,16 @@ $c-aqua: #84fab0;
 	display: flex;
 }
 
+.justspacebetween{
+	justify-content: space-between;
+}
+.justcenter{
+	justify-content: center;
+}
+.itemcenter{
+	align-items: center;
+}
+
 // ==================================================
 // Layout & Undoing Reset
 
@@ -40,16 +73,35 @@ $c-aqua: #84fab0;
 
 *{
 	@extend %ff-else;
+	line-height: 1.2;
+	color: $c-black-not;
 	box-sizing: border-box;
 }
 
 body{
-	background: $c-white;
+	background: $c-white-not;
 }
 
 h1, h2, h3, h4, h5, h6{
 	@extend %ff-header;
 }
+h1 { font-size: 2rem }
+h2 { font-size: 1.75rem }
+h3 { font-size: 1.5rem }
+h4 { font-size: 1.25rem }
+h5, h6, p { font-size: 1rem }
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: .5em;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
 
 #root{
 	@extend .flexer;
@@ -62,8 +114,20 @@ h1, h2, h3, h4, h5, h6{
 .container{
 	width: 100%;
 	max-width: 650px;
-	margin: 0 auto 1em auto;
-	padding: 1em;
+	margin: 0 auto;
+	padding: .75em;
+}
+
+.card{
+	background: $c-white-pure;
+	margin-bottom: 1em;
+	@include boxshadow;
+
+	@extend .flexer;
+	@extend .itemcenter;
+	flex-direction: column;
+
+	min-height: 40vh;
 }
 
 // ==================================================
@@ -71,9 +135,8 @@ h1, h2, h3, h4, h5, h6{
 
 nav, .nav{
 	width: 100%;
-	padding: 1.5em;
-
 	background: $c-grey-l;
+	align-items: center;
 }
 
 // ==================================================

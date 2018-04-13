@@ -97,8 +97,8 @@ class App extends React.Component{
     return (
       <React.Fragment>
       <nav>
-        <div className='container'>
-        <h1>{this.state.displayName} Habit Tracker</h1>
+        <div className='container flexer justspacebetween'>
+        <h1>{this.state.displayName}'s Habits</h1>
         <button onClick={this.logOut}>Log Out</button>
         </div>
       </nav>

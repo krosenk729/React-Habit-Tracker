@@ -23,6 +23,7 @@ class HistoryTracker extends React.Component{
 			)
 	}
 
+	// note: react jsx interpolation does not support tick marks from es6
 	renderBoxLegend = () => {
 		let r = rangeFive();
 
@@ -30,7 +31,7 @@ class HistoryTracker extends React.Component{
 		
 		return (
 			<div>
-			{ r.map(i => <div key={i} className={'c-' + this.state.color + '-' + i}>{i}</div>) }
+			{ rangeFive().map(i => <div key={i} className={'c-' + this.state.color + '-' + i}>{i}</div>) }
 			</div>
 		)
 	}
@@ -61,7 +62,7 @@ class HistoryTracker extends React.Component{
 		return (
 			<section className='container history card'>
 			<h2>How Has Your Tracking Been?</h2>
-			<p>See how you have been doing</p>
+			<p className="lead">See how you have been doing</p>
 			<div className='history-grid-wrapper flexer'>
 			<div className='history-grid'>
 				{dateRange.map(date => this.renderBox(date, countHabits))}

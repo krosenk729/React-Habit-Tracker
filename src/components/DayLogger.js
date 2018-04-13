@@ -84,6 +84,8 @@ class DayLogger extends React.Component{
 	render(){
 		return (
 		<section className="container logger card">
+			<h2>Did You Do It?</h2>
+			<p className="lead">Track if you did your habit</p>
 			<header className="flexer">
 			{ this.renderDateSwitcher() }
 			</header>

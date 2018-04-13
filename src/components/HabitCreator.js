@@ -34,7 +34,7 @@ class HabitCreator extends React.Component{
 		return (
 			<section className="container creator card">
 			<h2>What Habits Are You Tracking?</h2>
-			<p>Manage them here</p>
+			<p className="lead">Manage what you want to track here</p>
 			<ul>
 			{Object.keys(this.props.habits).map(index => (
 				<li key={index}>

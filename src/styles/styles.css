@@ -12,8 +12,17 @@
 .display {
   font-size: 4em; }
 
-.flexer, #root {
+.flexer, #root, .card {
   display: flex; }
+
+.justspacebetween {
+  justify-content: space-between; }
+
+.justcenter {
+  justify-content: center; }
+
+.itemcenter, .card {
+  align-items: center; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Francois One", sans-serif; }
@@ -22,10 +31,37 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Didact Gothic", sans-serif; }
 
 * {
+  line-height: 1.2;
+  color: #212121;
   box-sizing: border-box; }
 
 body {
   background: #F5F5F5; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.75rem; }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.25rem; }
+
+h5, h6, p {
+  font-size: 1rem; }
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: .5em; }
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2; }
 
 #root {
   flex-direction: column;
@@ -36,13 +72,21 @@ body {
 .container {
   width: 100%;
   max-width: 650px;
-  margin: 0 auto 1em auto;
-  padding: 1em; }
+  margin: 0 auto;
+  padding: .75em; }
+
+.card {
+  background: #FFFFFF;
+  margin-bottom: 1em;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  min-height: 40vh; }
 
 nav, .nav {
   width: 100%;
-  padding: 1.5em;
-  background: #BDBDBD; }
+  background: #BDBDBD;
+  align-items: center; }
 
 .history div.c-blue-0 {
   background: #6f86d6; }
