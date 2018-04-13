@@ -95,7 +95,7 @@ nav, .nav {
   align-items: center; }
 
 .history div.c-blue-0 {
-  background: #6f86d6;
+  background: #04befe;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -104,7 +104,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-blue-1 {
-  background: #4765cb;
+  background: #019ace;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -113,7 +113,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-blue-2 {
-  background: #314dae;
+  background: #01749b;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -122,7 +122,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-blue-3 {
-  background: #263c86;
+  background: #004e69;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -131,7 +131,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-blue-4 {
-  background: #1b2a5e;
+  background: #002836;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -140,7 +140,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-blue-5 {
-  background: #101836;
+  background: #000203;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -149,7 +149,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-0 {
-  background: #c471f5;
+  background: #ff7eb3;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -158,7 +158,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-1 {
-  background: #b041f2;
+  background: #ff4b95;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -167,7 +167,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-2 {
-  background: #9c12ee;
+  background: #ff1877;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -176,7 +176,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-3 {
-  background: #7d0dc0;
+  background: #e4005e;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -185,7 +185,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-4 {
-  background: #5e0a90;
+  background: #b10049;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -194,7 +194,7 @@ nav, .nav {
   font-weight: bold;
   display: inline-block; }
 .history div.c-pink-5 {
-  background: #3f0760;
+  background: #7e0034;
   width: 25px;
   height: 25px;
   margin: .15em;
@@ -312,22 +312,14 @@ nav, .nav {
   display: inline-block; }
 
 .history button.color-switch-blue {
-  background: #6f86d6;
-  background: -webkit-linear-gradient(#6f86d6, #2c449a);
-  background: -o-linear-gradient(#6f86d6, #2c449a);
-  background: -moz-linear-gradient(#6f86d6, #2c449a);
-  background: linear-gradient(#6f86d6, #2c449a);
+  background: #04befe;
   width: 40px;
   height: 40px;
   margin: .1em;
   border: 0;
   display: inline-block; }
 .history button.color-switch-pink {
-  background: #c471f5;
-  background: -webkit-linear-gradient(#c471f5, #8d0fd7);
-  background: -o-linear-gradient(#c471f5, #8d0fd7);
-  background: -moz-linear-gradient(#c471f5, #8d0fd7);
-  background: linear-gradient(#c471f5, #8d0fd7);
+  background: #ff7eb3;
   width: 40px;
   height: 40px;
   margin: .1em;
@@ -335,10 +327,6 @@ nav, .nav {
   display: inline-block; }
 .history button.color-switch-orange {
   background: #fda085;
-  background: -webkit-linear-gradient(#fda085, #fb3e08);
-  background: -o-linear-gradient(#fda085, #fb3e08);
-  background: -moz-linear-gradient(#fda085, #fb3e08);
-  background: linear-gradient(#fda085, #fb3e08);
   width: 40px;
   height: 40px;
   margin: .1em;
@@ -346,10 +334,6 @@ nav, .nav {
   display: inline-block; }
 .history button.color-switch-aqua {
   background: #84fab0;
-  background: -webkit-linear-gradient(#84fab0, #0af561);
-  background: -o-linear-gradient(#84fab0, #0af561);
-  background: -moz-linear-gradient(#84fab0, #0af561);
-  background: linear-gradient(#84fab0, #0af561);
   width: 40px;
   height: 40px;
   margin: .1em;

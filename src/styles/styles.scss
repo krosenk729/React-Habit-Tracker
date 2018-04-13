@@ -5,8 +5,8 @@ $c-black-not: #212121;
 $c-black-pure: #000000;
 $c-white-not: #F5F5F5;
 $c-white-pure: #FFFFFF;
-$c-blue: #6f86d6;
-$c-pink: #c471f5;
+$c-blue: #04befe;
+$c-pink: #ff7eb3;
 $c-orange: #fda085;
 $c-aqua: #84fab0;
 
@@ -179,7 +179,7 @@ nav, .nav{
 
 @mixin makeSwitchButton($colorName, $colorValue){
 	button.color-switch-#{$colorName} {
-		@include gradient-bg($colorValue);
+		background: $colorValue;
 		width: 40px;
 		height: 40px;
 
