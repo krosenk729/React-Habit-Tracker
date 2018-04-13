@@ -57,9 +57,11 @@ $c-aqua: #84fab0;
 .flexer{
 	display: flex;
 }
-
 .justspacebetween{
 	justify-content: space-between;
+}
+.justspacearound{
+	justify-content: space-around;
 }
 .justcenter{
 	justify-content: center;
@@ -175,19 +177,32 @@ nav, .nav{
     @include makeColors(aqua, $c-aqua);
 }
 
+@mixin makeSwitchButton($colorName, $colorValue){
+	button.color-switch-#{$colorName} {
+		@include gradient-bg($colorValue);
+		width: 40px;
+		height: 40px;
+
+		margin: .1em;
+		border: 0;
+		display: inline-block;
+	}
+}
+
+.history{
+    @include makeSwitchButton(blue, $c-blue);
+    @include makeSwitchButton(pink, $c-pink);
+    @include makeSwitchButton(orange, $c-orange);
+    @include makeSwitchButton(aqua, $c-aqua);
+}
+
+// layout only 
 .history-grid-wrapper{
 	width: 90%;
 	margin-bottom: 2em;
 
 	.history-grid{
 		width: 300px;
-	}
-
-	.history-colors{
-		button{
-			width: 35px;
-			height: 35px;
-		}
 	}
 }
 

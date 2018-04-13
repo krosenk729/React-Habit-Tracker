@@ -63,11 +63,11 @@ class HistoryTracker extends React.Component{
 			<section className='container history card'>
 			<h2>How Has Your Tracking Been?</h2>
 			<p className="lead">See how you have been doing</p>
-			<div className='history-grid-wrapper flexer justspacebetween'>
+			<div className='history-grid-wrapper flexer justspacearound'>
 			<div className='history-grid'>
 				{dateRange.map(date => this.renderBox(date, countHabits))}
 			</div>
-			<div className='history-colors'>
+			<div className='history-legend'>
 				<h4>Legend</h4>
 				{this.renderBoxLegend()}
 				<h4>Choose a Color</h4>
