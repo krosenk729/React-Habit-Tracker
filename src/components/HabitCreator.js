@@ -32,8 +32,9 @@ class HabitCreator extends React.Component{
 
 	render(){
 		return (
-			<div>
-			<h2>Your Tracked Habits</h2>
+			<section className="container creator">
+			<h2>What Habits Are You Tracking?</h2>
+			<p>Manage them here</p>
 			<ul>
 			{Object.keys(this.props.habits).map(index => (
 				<li key={index}>
@@ -51,7 +52,7 @@ class HabitCreator extends React.Component{
 				</form>
 				</li>
 			</ul>
-			</div>
+			</section>
 		)
 	}
 }

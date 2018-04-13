@@ -96,27 +96,32 @@ class App extends React.Component{
   render(){
     return (
       <React.Fragment>
-      <nav className='nav'>
-        <button onClick={this.logOut}>Log Out {this.state.displayName}</button>
+      <nav>
+        <div className='container'>
+        <h1>{this.state.displayName} Habit Tracker</h1>
+        <button onClick={this.logOut}>Log Out</button>
+        </div>
       </nav>
-        <DayLogger
-        habits={this.state.habits}
-        history={this.state.history} 
-        logHistory={this.logHistory} 
-        />
-        
-        
-        <HistoryTracker 
-        habits={this.state.habits}
-        history={this.state.history}
-         />
+      <main className='container'>
+      <DayLogger
+      habits={this.state.habits}
+      history={this.state.history} 
+      logHistory={this.logHistory} 
+      />
+      
+      
+      <HistoryTracker 
+      habits={this.state.habits}
+      history={this.state.history}
+      />
 
-        <HabitCreator
-        habits={this.state.habits}
-        changeHabit = {this.changeHabit}
-        removeHabit = {this.removeHabit}
-        />
+      <HabitCreator
+      habits={this.state.habits}
+      changeHabit = {this.changeHabit}
+      removeHabit = {this.removeHabit}
+      />
 
+      </main>
       </React.Fragment>
       )
     }

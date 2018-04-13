@@ -1,18 +1,114 @@
+$c-grey-l: #BDBDBD;
+$c-grey-m: #9E9E9E;
+$c-grey-d: #616161;
+$c-black: #212121;
+$c-white: #F5F5F5;
+$c-blue: #6f86d6;
+$c-pink: #c471f5;
+$c-orange: #fda085;
+$c-aqua: #84fab0;
+
+// ==================================================
+// Utilities 
+
+.full{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.display{
+	font-size: 4em;
+}
+
+.flexer{
+	display: flex;
+}
+
+// ==================================================
+// Layout & Undoing Reset
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT');
+
+*{
+	font-family: 'Cabin', Verdana, sans-serif;
+	box-sizing: border-box;
+}
+
+body{
+	background: $c-white;
+}
+
+p, blockquote{
+	font-family: 'Old Standard TT', Arial, sans-serif;
+}
+
+#root{
+	@extend .flexer;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.container{
+	width: 100%;
+	max-width: 650px;
+	margin: 0 auto 1em auto;
+	padding: 1em;
+}
+
+// ==================================================
+// Layout & Undoing Reset
+
+nav, .nav{
+	width: 100%;
+	padding: 1.5em;
+
+	background: $c-grey-l;
+}
+
+// ==================================================
+// Section: Day Log
+
+// ==================================================
+// Section: History
+
 .history-grid{
+
+}
+
+@mixin makeColors($colorName, $colorValue){
+	@for $i from 0 through 5{
+		div.c-#{$colorName}-#{$i} {
+			background: darken( $colorValue, $i * 10 );
+		}
+	}
+}
+
+.history-grid{
+	width: 300px;
 	& > div{
 		width: 25px;
 		height: 25px;
-		border: 5px solid grey;
-		display: inline-block;
-	}
 
-	.c-0{
-		background: darken(pink, 5%)
-	}
-	.c-5{
-		background: darken(pink, 15%)
-	}
-	.c-10{
-		background: darken(pink, 25%)
-	}
+		margin: 5px;
+		display: inline-block;
+	}	
+
+    @include makeColors(blue, $c-blue);
+    @include makeColors(pink, $c-pink);
+    @include makeColors(orange, $c-orange);
+    @include makeColors(aqua, $c-aqua);
+
 }
+
+
+// ==================================================
+// Section: Habit Manager

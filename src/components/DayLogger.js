@@ -82,14 +82,15 @@ class DayLogger extends React.Component{
 	*/
 
 	render(){
-		const dayHistory = this.props.history[this.state.logDate] || {};
 		return (
-			<div>
-				{ this.renderDateSwitcher() }
-				<ul>
-					{Object.keys(this.props.habits).map(this.renderDateHabits)}
-				</ul>
-			</div>
+		<section className="container logger">
+			<header>
+			{ this.renderDateSwitcher() }
+			</header>
+			<ul>
+				{Object.keys(this.props.habits).map(this.renderDateHabits)}
+			</ul>
+		</section>
 		)
 	}
 }

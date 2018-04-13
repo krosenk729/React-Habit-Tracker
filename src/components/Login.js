@@ -29,7 +29,9 @@ class Login extends React.Component{
 
 	render(){
 		return (
+      <div className='display full'>
 			<button onClick={this.login}>Log In</button>
+      </div>
 		)
 	}
 }
