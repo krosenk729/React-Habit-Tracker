@@ -34,10 +34,12 @@ $c-aqua: #84fab0;
 // ==================================================
 // Layout & Undoing Reset
 
-@import url('https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT');
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Francois+One');
+%ff-header{ font-family: 'Francois One', sans-serif }
+%ff-else{ font-family: 'Didact Gothic', sans-serif }
 
 *{
-	font-family: 'Cabin', Verdana, sans-serif;
+	@extend %ff-else;
 	box-sizing: border-box;
 }
 
@@ -45,8 +47,8 @@ body{
 	background: $c-white;
 }
 
-p, blockquote{
-	font-family: 'Old Standard TT', Arial, sans-serif;
+h1, h2, h3, h4, h5, h6{
+	@extend %ff-header;
 }
 
 #root{
@@ -80,16 +82,19 @@ nav, .nav{
 // ==================================================
 // Section: History
 
-.history-grid{
-
-}
-
 @mixin makeColors($colorName, $colorValue){
 	@for $i from 0 through 5{
 		div.c-#{$colorName}-#{$i} {
 			background: darken( $colorValue, $i * 10 );
 		}
 	}
+}
+
+.history{
+    @include makeColors(blue, $c-blue);
+    @include makeColors(pink, $c-pink);
+    @include makeColors(orange, $c-orange);
+    @include makeColors(aqua, $c-aqua);
 }
 
 .history-grid{
@@ -100,13 +105,15 @@ nav, .nav{
 
 		margin: 5px;
 		display: inline-block;
-	}	
+	}
+}
 
-    @include makeColors(blue, $c-blue);
-    @include makeColors(pink, $c-pink);
-    @include makeColors(orange, $c-orange);
-    @include makeColors(aqua, $c-aqua);
+.history-colors{
+	button{
+		width: 35px;
+		height: 35px;
 
+	}
 }
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import {floorEr, rangeTen} from '../utils/helpers';
+import {floorEr, rangeFive} from '../utils/helpers';
 
 class HistoryTracker extends React.Component{
 	state = {
@@ -23,13 +23,14 @@ class HistoryTracker extends React.Component{
 			)
 	}
 
-	renderBoxLegend = (color) => {
-		let r = rangeTen();
+	renderBoxLegend = () => {
+		let r = rangeFive();
+
 		// let classComplete = `c-${this.state.color}-` + floorEr(numComplete/(Math.max(countHabits), 1) * 10);
 		
 		return (
 			<div>
-			{ r.map(i => <div className={i}>{i}</div>) }
+			{ r.map(i => <div key={i} className={'c-' + this.state.color + '-' + i}>{i}</div>) }
 			</div>
 		)
 	}
@@ -58,7 +59,7 @@ class HistoryTracker extends React.Component{
 			.format('MM-DD-YYYY'));
 		const countHabits = this.props.habits ? Object.keys(this.props.habits).length : 0;
 		return (
-			<section className='container history'>
+			<section className='container history card'>
 			<h2>How Has Your Tracking Been?</h2>
 			<p>See how you have been doing</p>
 			<div className='history-grid-wrapper flexer'>
@@ -69,7 +70,7 @@ class HistoryTracker extends React.Component{
 				<h4>Choose a Color</h4>
 				{this.state.colorList.map(this.renderColorSwitch)}
 				<h4>Legend</h4>
-				{this.state.colorList.map(this.renderBoxLegend)}
+				{this.renderBoxLegend()}
 			</div>
 			</div>
 			</section>

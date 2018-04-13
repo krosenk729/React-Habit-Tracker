@@ -83,8 +83,8 @@ class DayLogger extends React.Component{
 
 	render(){
 		return (
-		<section className="container logger">
-			<header>
+		<section className="container logger card">
+			<header className="flexer">
 			{ this.renderDateSwitcher() }
 			</header>
 			<ul>

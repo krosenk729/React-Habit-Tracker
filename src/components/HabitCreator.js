@@ -32,7 +32,7 @@ class HabitCreator extends React.Component{
 
 	render(){
 		return (
-			<section className="container creator">
+			<section className="container creator card">
 			<h2>What Habits Are You Tracking?</h2>
 			<p>Manage them here</p>
 			<ul>
