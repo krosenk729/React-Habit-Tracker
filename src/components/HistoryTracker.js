@@ -17,7 +17,7 @@ class HistoryTracker extends React.Component{
 			if(historyData[habit]) numComplete++;
 		}
 
-		let classComplete = `c-${this.state.color}-` + floorEr(numComplete/(Math.max(countHabits), 1) * 10);
+		let classComplete = `c-chip c-${this.state.color}-` + floorEr(numComplete/(Math.max(countHabits), 1) * 10);
 		return (
 			<div key={date} className={classComplete} data-date={date}></div>
 			)
@@ -31,7 +31,7 @@ class HistoryTracker extends React.Component{
 		
 		return (
 			<div>
-			{ rangeFive().map(i => <div key={i} className={'c-' + this.state.color + '-' + i}>{i}</div>) }
+			{ rangeFive().map(i => <div key={i} className={'c-chip c-' + this.state.color + '-' + i}>{i}</div>) }
 			</div>
 		)
 	}
@@ -63,15 +63,15 @@ class HistoryTracker extends React.Component{
 			<section className='container history card'>
 			<h2>How Has Your Tracking Been?</h2>
 			<p className="lead">See how you have been doing</p>
-			<div className='history-grid-wrapper flexer'>
+			<div className='history-grid-wrapper flexer justspacebetween'>
 			<div className='history-grid'>
 				{dateRange.map(date => this.renderBox(date, countHabits))}
 			</div>
 			<div className='history-colors'>
-				<h4>Choose a Color</h4>
-				{this.state.colorList.map(this.renderColorSwitch)}
 				<h4>Legend</h4>
 				{this.renderBoxLegend()}
+				<h4>Choose a Color</h4>
+				{this.state.colorList.map(this.renderColorSwitch)}
 			</div>
 			</div>
 			</section>

@@ -9,6 +9,9 @@
   display: flex;
   justify-content: center; }
 
+.center, .history div.c-blue-0, .history div.c-blue-1, .history div.c-blue-2, .history div.c-blue-3, .history div.c-blue-4, .history div.c-blue-5, .history div.c-pink-0, .history div.c-pink-1, .history div.c-pink-2, .history div.c-pink-3, .history div.c-pink-4, .history div.c-pink-5, .history div.c-orange-0, .history div.c-orange-1, .history div.c-orange-2, .history div.c-orange-3, .history div.c-orange-4, .history div.c-orange-5, .history div.c-aqua-0, .history div.c-aqua-1, .history div.c-aqua-2, .history div.c-aqua-3, .history div.c-aqua-4, .history div.c-aqua-5 {
+  text-align: center; }
+
 .display {
   font-size: 4em; }
 
@@ -89,64 +92,229 @@ nav, .nav {
   align-items: center; }
 
 .history div.c-blue-0 {
-  background: #6f86d6; }
+  background: #6f86d6;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-blue-1 {
-  background: #4765cb; }
+  background: #4765cb;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-blue-2 {
-  background: #314dae; }
+  background: #314dae;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-blue-3 {
-  background: #263c86; }
+  background: #263c86;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-blue-4 {
-  background: #1b2a5e; }
+  background: #1b2a5e;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-blue-5 {
-  background: #101836; }
+  background: #101836;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-0 {
-  background: #c471f5; }
+  background: #c471f5;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-1 {
-  background: #b041f2; }
+  background: #b041f2;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-2 {
-  background: #9c12ee; }
+  background: #9c12ee;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-3 {
-  background: #7d0dc0; }
+  background: #7d0dc0;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-4 {
-  background: #5e0a90; }
+  background: #5e0a90;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-pink-5 {
-  background: #3f0760; }
+  background: #3f0760;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-0 {
-  background: #fda085; }
+  background: #fda085;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-1 {
-  background: #fc7953; }
+  background: #fc7953;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-2 {
-  background: #fb5221; }
+  background: #fb5221;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-3 {
-  background: #e53604; }
+  background: #e53604;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-4 {
-  background: #b32b03; }
+  background: #b32b03;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-orange-5 {
-  background: #811f02; }
+  background: #811f02;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-0 {
-  background: #84fab0; }
+  background: #84fab0;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-1 {
-  background: #53f891; }
+  background: #53f891;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-2 {
-  background: #22f671; }
+  background: #22f671;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-3 {
-  background: #09dc58; }
+  background: #09dc58;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-4 {
-  background: #07ab44; }
+  background: #07ab44;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 .history div.c-aqua-5 {
-  background: #057a31; }
+  background: #057a31;
+  width: 25px;
+  height: 25px;
+  margin: .15em;
+  padding: .25em;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block; }
 
-.history-grid {
-  width: 300px; }
-  .history-grid > div {
-    width: 25px;
-    height: 25px;
-    margin: 5px;
-    display: inline-block; }
-
-.history-colors button {
-  width: 35px;
-  height: 35px; }
+.history-grid-wrapper {
+  width: 90%;
+  margin-bottom: 2em; }
+  .history-grid-wrapper .history-grid {
+    width: 300px; }
+  .history-grid-wrapper .history-colors button {
+    width: 35px;
+    height: 35px; }
 
 /*# sourceMappingURL=styles.css.map */

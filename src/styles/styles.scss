@@ -46,6 +46,10 @@ $c-aqua: #84fab0;
     justify-content: center;
 }
 
+.center{
+	text-align: center;
+}
+
 .display{
 	font-size: 4em;
 }
@@ -149,6 +153,17 @@ nav, .nav{
 	@for $i from 0 through 5{
 		div.c-#{$colorName}-#{$i} {
 			background: darken( $colorValue, $i * 10 );
+			width: 25px;
+			height: 25px;
+
+			margin: .15em;
+			padding: .25em;
+
+			@extend .center;
+			color: $c-white-pure;
+			font-weight: bold;
+
+			display: inline-block;
 		}
 	}
 }
@@ -160,25 +175,32 @@ nav, .nav{
     @include makeColors(aqua, $c-aqua);
 }
 
-.history-grid{
-	width: 300px;
-	& > div{
-		width: 25px;
-		height: 25px;
+.history-grid-wrapper{
+	width: 90%;
+	margin-bottom: 2em;
 
-		margin: 5px;
-		display: inline-block;
+	.history-grid{
+		width: 300px;
 	}
-}
 
-.history-colors{
-	button{
-		width: 35px;
-		height: 35px;
-
+	.history-colors{
+		button{
+			width: 35px;
+			height: 35px;
+		}
 	}
 }
 
 
 // ==================================================
 // Section: Habit Manager
+
+.creator{
+	input, fieldset{
+
+	}
+
+	button{
+
+	}
+}
