@@ -1,6 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types'; 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import fontawesome from '@fortawesome/fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/fontawesome-free-solid';
 
 class DayLogger extends React.Component{
 	static propTypes = {
@@ -41,13 +44,17 @@ class DayLogger extends React.Component{
 		className="date-shift"
 		disabled={moment(this.state.logDate, 'MM-DD-YYYY').isSameOrBefore(minDate, 'day')}
 		onClick={this.prevDate}
-		>◀</button>
+		>
+		<FontAwesomeIcon icon={faChevronLeft} />
+		</button>
 		<h4>{this.state.logDate}</h4>
 		<button 
 		className="date-shift"
 		disabled={moment(this.state.logDate, 'MM-DD-YYYY').isSameOrAfter(maxDate, 'day')}
 		onClick={this.nextDate}
-		>▶</button>
+		>
+		<FontAwesomeIcon icon={faChevronRight} />
+		</button>
 		</React.Fragment>
 		)
 	}
