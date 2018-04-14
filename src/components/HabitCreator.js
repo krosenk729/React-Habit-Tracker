@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import fontawesome from '@fortawesome/fontawesome';
+import { faTimes, faPlus } from '@fortawesome/fontawesome-free-solid';
 
 class HabitCreator extends React.Component{
 	static propTypes = {
@@ -40,7 +43,7 @@ class HabitCreator extends React.Component{
 				<li key={index}>
 				<fieldset>
 				<input onChange={(event) => this.handleChangeHabit(index, event)} value={this.props.habits[index]} />
-				<button onClick={()=> this.props.removeHabit(index)}> X </button>
+				<button className="delete-btn" onClick={()=> this.props.removeHabit(index)}><FontAwesomeIcon icon={faTimes} /></button>
 				</fieldset>
 				</li>
 				))}
@@ -48,7 +51,7 @@ class HabitCreator extends React.Component{
 				<li>
 				<form onSubmit={this.handleNewHabit}>
 				<input name="newHabit" ref={this.newHabitRef} />
-				<button type="submit"> + </button>
+				<button className="add-btn" type="submit"><FontAwesomeIcon icon={faPlus} /></button>
 				</form>
 				</li>
 			</ul>

@@ -99,7 +99,7 @@ class App extends React.Component{
       <nav>
         <div className='container flexer justspacebetween'>
         <h1>{this.state.displayName}'s Habits</h1>
-        <button onClick={this.logOut}>Log Out</button>
+        <button className="sk" onClick={this.logOut}>Log Out</button>
         </div>
       </nav>
       <main className='container'>

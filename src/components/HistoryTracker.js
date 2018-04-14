@@ -67,12 +67,12 @@ class HistoryTracker extends React.Component{
 				{dateRange.map(date => this.renderBox(date, countHabits))}
 			</div>
 			<div className='history-legend'>
-				<h4>Legend</h4>
-				{this.renderBoxLegend()}
 				<h4>Choose a Color</h4>
 				<div>
 				{this.state.colorList.map(this.renderColorSwitch)}
 				</div>
+				<h4>Legend</h4>
+				{this.renderBoxLegend()}
 			</div>
 			</div>
 			</section>

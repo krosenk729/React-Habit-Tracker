@@ -92,7 +92,7 @@ class DayLogger extends React.Component{
 		return (
 		<section className="container logger card">
 			<h2>Did You Do It?</h2>
-			<p className="lead">Track if you did your habit</p>
+			<p className="lead">Quick-track if you built your habit each day</p>
 			<div className="logger-nav">
 			{ this.renderDateSwitcher() }
 			</div>

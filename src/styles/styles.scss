@@ -44,6 +44,7 @@ $c-aqua: #84fab0;
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .center{
@@ -68,6 +69,26 @@ $c-aqua: #84fab0;
 }
 .itemcenter{
 	align-items: center;
+}
+
+// ==================================================
+// Micro Interactions
+
+@keyframes skewNReturn{
+	0%{ transform: skew(0) }
+	25%{ transform: skew(-25deg) }
+	75%{ transform: skew(25deg) }
+	100%{ transform: skew(0) }
+}
+
+.sk:hover{
+	animation: skewNReturn 1s;
+}
+
+@keyframes slowColorFlare{
+	0%{ border-color: inherit }
+	15%{ border-color: $c-grey-l }
+	25%{ border-color: inherit }
 }
 
 // ==================================================
@@ -108,7 +129,6 @@ h5, h6, p { font-size: 1rem }
   line-height: 1.2;
 }
 
-
 #root{
 	@extend .flexer;
 	flex-direction: column;
@@ -126,8 +146,8 @@ h5, h6, p { font-size: 1rem }
 
 .card{
 	background: $c-white-pure;
-	margin-bottom: 1em;
-	padding-bottom: 1em;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
 	@include boxshadow;
 
 	@extend .flexer;
@@ -138,13 +158,34 @@ h5, h6, p { font-size: 1rem }
 
 }
 
+button{
+	border: 2px solid $c-black-not;
+	background: transparent;
+	font-size: 1.2em;
+
+	&:disabled{
+		opacity: .2;
+	}
+}
+
 // ==================================================
 // Layout & Undoing Reset
 
 nav, .nav{
 	width: 100%;
-	background: $c-grey-l;
+	background: $c-white-pure;
 	align-items: center;
+	@include boxshadow;
+}
+
+
+// ==================================================
+// Login
+
+.login-btn{
+	padding: 1.3em;
+	margin: .5em;
+	animation: slowColorFlare 15s infinite;
 }
 
 // ==================================================
@@ -154,8 +195,6 @@ nav, .nav{
 	@extend .flexer;
 	@extend .justcenter;
 	@extend .itemcenter;
-
-
 }
 
 button.date-shift{
@@ -163,6 +202,17 @@ button.date-shift{
 	width: 45px;
 	height: 45px;
 	border-radius: 100%;
+
+	animation: slowColorFlare 10s infinite;
+}
+
+.logger{
+	li{
+		font-size: 1.5em;
+		padding: .5em;
+		margin-top: .25em;
+		margin-bottom: .25em;
+	}
 }
 
 // ==================================================
@@ -199,6 +249,7 @@ button.date-shift{
 		background: $colorValue;
 		width: 40px;
 		height: 40px;
+		border-radius: 100% 100% 0 100%;
 
 		margin: .1em;
 		border: 0;
@@ -225,6 +276,12 @@ button.date-shift{
 	.history-legend > div{
 		margin-bottom: 1em;
 	}
+
+	.history-legend{
+		.c-chip{
+			border-radius: 100%;
+		}
+	}
 }
 
 
@@ -232,11 +289,33 @@ button.date-shift{
 // Section: Habit Manager
 
 .creator{
-	input, fieldset{
-
+	li{
+		padding: .25em;
+		margin-top: .25em;
+		margin-bottom: .25em;
 	}
 
-	button{
+	input{
+		margin-right: 8px;
+		outline: none;
+		font-size: 1.35em;
+		border: 0;
+		border-bottom: 2px solid $c-grey-l;
 
+		&:focus{
+		border-bottom: 2px solid $c-grey-d;
+		animation: slowColorFlare 5s infinite;
+		}
+	}
+
+	.delete-btn:hover,
+	.delete-btn:active{
+		opacity: .9;
+		@include boxshadow($horiz: 3px, $vert: 3px, $blur: 4px, $col: transparentize($c-pink, .5));
+	}
+	.add-btn:hover,
+	.add-btn:active{
+		opacity: .9;
+		@include boxshadow($horiz: 3px, $vert: 3px, $blur: 4px, $col: transparentize($c-aqua, .5));
 	}
 }

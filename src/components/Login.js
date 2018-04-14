@@ -30,7 +30,10 @@ class Login extends React.Component{
 	render(){
 		return (
       <div className='display full'>
-			<button onClick={this.login}>Log In</button>
+      <h1>
+      Add Goals. Track Them. Create Habits.
+      </h1>
+			<button className="sk login-btn" onClick={this.login}>Log In</button>
       </div>
 		)
 	}
