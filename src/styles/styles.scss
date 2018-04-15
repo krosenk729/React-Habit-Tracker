@@ -185,7 +185,8 @@ nav, .nav{
 .login-btn{
 	padding: 1.3em;
 	margin: .5em;
-	animation: slowColorFlare 15s infinite;
+	max-width: 100%;
+	animation: slowColorFlare 10s infinite;
 }
 
 // ==================================================
@@ -301,6 +302,7 @@ button.date-shift{
 		font-size: 1.35em;
 		border: 0;
 		border-bottom: 2px solid $c-grey-l;
+		width: 75%;
 
 		&:focus{
 		border-bottom: 2px solid $c-grey-d;
@@ -309,13 +311,15 @@ button.date-shift{
 	}
 
 	.delete-btn:hover,
-	.delete-btn:active{
+	.delete-btn:active,
+	.delete-btn:focus{
 		opacity: .9;
-		@include boxshadow($horiz: 3px, $vert: 3px, $blur: 4px, $col: transparentize($c-pink, .5));
+		@include boxshadow($horiz: 4px, $vert: 4px, $blur: 4px, $col: transparentize($c-pink, .5));
 	}
 	.add-btn:hover,
-	.add-btn:active{
+	.add-btn:active,
+	.add-btn:focus{
 		opacity: .9;
-		@include boxshadow($horiz: 3px, $vert: 3px, $blur: 4px, $col: transparentize($c-aqua, .5));
+		@include boxshadow($horiz: 4px, $vert: 4px, $blur: 4px, $col: transparentize($c-aqua, .5));
 	}
 }

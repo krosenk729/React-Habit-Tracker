@@ -19,6 +19,8 @@ class HabitCreator extends React.Component{
 	handleNewHabit = (event) => {
 		event.preventDefault();
 		const newHabit = this.newHabitRef.current ? this.newHabitRef.current.value : event.target.newHabit.value;
+		if(!newHabit){ return }
+
 		const newKey = +new Date();
 		this.props.changeHabit(newKey, newHabit);
 		event.target.reset();

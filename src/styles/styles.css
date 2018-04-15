@@ -127,7 +127,8 @@ nav, .nav {
 .login-btn {
   padding: 1.3em;
   margin: .5em;
-  animation: slowColorFlare 15s infinite; }
+  max-width: 100%;
+  animation: slowColorFlare 10s infinite; }
 
 button.date-shift {
   margin: 1em;
@@ -411,19 +412,22 @@ button.date-shift {
   outline: none;
   font-size: 1.35em;
   border: 0;
-  border-bottom: 2px solid #BDBDBD; }
+  border-bottom: 2px solid #BDBDBD;
+  width: 75%; }
   .creator input:focus {
     border-bottom: 2px solid #616161;
     animation: slowColorFlare 5s infinite; }
 .creator .delete-btn:hover,
-.creator .delete-btn:active {
+.creator .delete-btn:active,
+.creator .delete-btn:focus {
   opacity: .9;
-  -webkit-box-shadow: 3px 3px 4px rgba(255, 126, 179, 0.5);
-  box-shadow: 3px 3px 4px rgba(255, 126, 179, 0.5); }
+  -webkit-box-shadow: 4px 4px 4px rgba(255, 126, 179, 0.5);
+  box-shadow: 4px 4px 4px rgba(255, 126, 179, 0.5); }
 .creator .add-btn:hover,
-.creator .add-btn:active {
+.creator .add-btn:active,
+.creator .add-btn:focus {
   opacity: .9;
-  -webkit-box-shadow: 3px 3px 4px rgba(132, 250, 176, 0.5);
-  box-shadow: 3px 3px 4px rgba(132, 250, 176, 0.5); }
+  -webkit-box-shadow: 4px 4px 4px rgba(132, 250, 176, 0.5);
+  box-shadow: 4px 4px 4px rgba(132, 250, 176, 0.5); }
 
 /*# sourceMappingURL=styles.css.map */
